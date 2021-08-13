@@ -45,6 +45,7 @@ def HodimAdd(request):
     mut = request.POST['mut']
     add = request.POST['add']
 
+    a = 5
 
     Hodimlar.objects.create(fio=fio, phone=phone, mutaxasislik=mut, address=add)
 
