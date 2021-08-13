@@ -1,0 +1,21 @@
+    {% extends 'base.html' %}
+    {% block title %}
+    <title>{{ hodim.fio }}</title>
+    {% endblock title %}
+    {% block content %}
+    <h1>{{ hodim.fio }}</h1>
+    <ul>
+        <li>fio : {{ hodim.fio }}</li>
+        <li>phone : {{ hodim.phone }}</li>
+        <li>mutaxasislik : {{ hodim.mutaxasislik }}</li>
+        <li>address : {{ hodim.address }}</li>
+    </ul>
+    <h4>hodimlar</h4>
+    <ol>
+        {% for h in hodimlar %}
+            <li><a href="/hodim-detail/{{ h.id }}/">{{ h.fio }}</a></li>
+        {% endfor %}
+    </ol>
+
+    {% endblock content %}
+

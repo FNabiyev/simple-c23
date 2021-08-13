@@ -1,0 +1,16 @@
+    {% extends 'base.html' %}
+    {% block title %}
+    <title>Service</title>
+    {% endblock title %}
+    {% block content %}
+    <h1>Hodimlar</h1>
+        {% for i in ishchi %}
+        <ul>
+            <li>{{ forloop.counter }}</li>
+            <li>FIO : <a href="/ishchi/{{ i.id }}/">{{ i.fio }}</a></li>
+            <li>Phone : {{ i.phone }}</li>
+            <li>Mutaxasislik : {{ i.mutaxasislik }}</li>
+            <li>Address : {{ i.address }}</li>
+        </ul>
+        {% endfor %}
+    {% endblock %}

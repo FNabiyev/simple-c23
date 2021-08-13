@@ -1,0 +1,28 @@
+    {% extends 'base.html' %}
+
+    {% block title %}
+    <title>about</title>
+
+    {% endblock title %}
+    {% block content %}
+    <h1>About</h1>
+        <form action="/hodim-add/" method="post">
+            {% csrf_token %}
+            <ul>
+                <li>FIO : <input type="text" name="fio"></li>
+                <li>Phone : <input type="text" name="phone"></li>
+                <li>Mut : <input type="text" name="mut"></li>
+                <li>Add : <input type="text" name="add"></li>
+                <li><input type="submit" value="Qo'shish"></li>
+            </ul>
+        </form>
+    {% for i in hodimlar %}
+    <ul>
+        <li>{{ forloop.counter }}</li>
+        <li>FIO : <a href="/ishchi/{{ i.id }}/">{{ i.fio }}</a></li>
+        <li>Phone : {{ i.phone }}</li>
+        <li>Mutaxasislik : {{ i.mutaxasislik }}</li>
+        <li>Address : {{ i.address }}</li>
+    </ul>
+    {% endfor %}
+    {% endblock %}
